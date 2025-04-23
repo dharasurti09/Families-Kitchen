@@ -2,91 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Families Kitchen</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById("recipeDropdown");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+        
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    let openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === "block") {
+                        openDropdown.style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body>
-    <header>
-        <div class="topbar">
-            <h1>Families Kitchen</h1>
-            <p>Welcome to the Indian Recipe blog</p>
-        </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#" onclick="showCategory('home')">Home</a></li>
-                <li class="dropdown-toggle">
-                    <button onclick="toggleDropdown()">Recipes</button>
-                    <ul class="dropdown">
-                        <li><a href="#" onclick="showCategory('breakfast')">Breakfast</a></li>
-                        <li><a href="#" onclick="showCategory('vegetarian')">Vegetarian Recipe</a></li>
-                        <li><a href="#" onclick="showCategory('nonveg')">Non Vegetarian Recipe</a></li>
-                        <li><a href="#" onclick="showCategory('snacks')">Snacks</a></li>
-                        <li><a href="#" onclick="showCategory('rice')">Rice</a></li>
-                        <li><a href="#" onclick="showCategory('sweets')">Sweets</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="content" id="mainContent">
-        <div class="recipe" data-category="breakfast">
-            <h2>Breakfast: Masala Dosa</h2>
-            <img src="https://via.placeholder.com/600x300.png?text=Masala+Dosa" alt="Masala Dosa">
-            <h3>Ingredients:</h3>
-            <ul>
-                <li>1 cup rice</li>
-                <li>1/2 cup urad dal</li>
-                <li>Salt</li>
-                <li>Oil</li>
-                <li>Potato filling</li>
-            </ul>
-            <h3>Steps:</h3>
-            <ol>
-                <li>Soak rice and dal, then grind to a batter.</li>
-                <li>Ferment overnight.</li>
-                <li>Spread on tawa, add filling, cook until golden.</li>
-            </ol>
-        </div>
-
-        <div class="recipe" data-category="vegetarian">
-            <h2>Vegetarian: Paneer Butter Masala</h2>
-            <img src="https://via.placeholder.com/600x300.png?text=Paneer+Butter+Masala" alt="Paneer Butter Masala">
-            <h3>Ingredients:</h3>
-            <ul>
-                <li>200g paneer</li>
-                <li>2 tomatoes</li>
-                <li>Butter</li>
-                <li>Cream</li>
-                <li>Spices</li>
-            </ul>
-            <h3>Steps:</h3>
-            <ol>
-                <li>Cook tomatoes with spices.</li>
-                <li>Blend and strain.</li>
-                <li>Add paneer and cream, simmer.</li>
-            </ol>
-        </div>
-
-        <!-- More recipe blocks with data-category can be added here -->
+    <div class="topbar">
+        <h1>Families Kitchen</h1>
+        <p>Welcome to the Indian Recipe blog</p>
     </div>
 
-    <script>
-        function showCategory(category) {
-            const recipes = document.querySelectorAll('.recipe');
-            recipes.forEach(recipe => {
-                recipe.style.display = (recipe.dataset.category === category || category === 'home') ? 'block' : 'none';
-            });
-        }
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <button class="dropbtn" onclick="toggleDropdown()">Recipes</button>
+                <ul class="dropdown" id="recipeDropdown">
+                    <li><a href="breakfast.html">Breakfast</a></li>
+                    <li><a href="vegetarian.html">Vegetarian Recipe</a></li>
+                    <li><a href="nonveg.html">Non Vegetarian Recipe</a></li>
+                    <li><a href="snacks.html">Snacks</a></li>
+                    <li><a href="rice.html">Rice</a></li>
+                    <li><a href="sweets.html">Sweets</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 
-        function toggleDropdown() {
-            const dropdown = document.querySelector('.dropdown');
-            dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
-        }
-
-        // Show all by default
-        showCategory('home');
-    </script>
+    <div class="content">
+        <div class="recipe">
+            <h2>Featured Recipe: Chole Bhature</h2>
+            <img src="https://via.placeholder.com/600x300.png?text=Chole+Bhature" alt="Chole Bhature">
+            <h3>Ingredients:</h3>
+            <ul>
+                <li>Chickpeas</li>
+                <li>Flour</li>
+                <li>Spices</li>
+                <li>Oil</li>
+                <li>Onion and tomato gravy</li>
+            </ul>
+            <h3>Steps:</h3>
+            <ol>
+                <li>Soak and boil chickpeas.</li>
+                <li>Prepare spicy onion-tomato gravy.</li>
+                <li>Mix and fry the bhature.</li>
+                <li>Serve hot with chole.</li>
+            </ol>
+        </div>
+    </div>
 </body>
 </html>
