@@ -16,7 +16,7 @@
             <ul>
                 <li><a href="#" onclick="showCategory('home')">Home</a></li>
                 <li class="dropdown-toggle">
-                    <a href="#">Recipes</a>
+                    <button onclick="toggleDropdown()">Recipes</button>
                     <ul class="dropdown">
                         <li><a href="#" onclick="showCategory('breakfast')">Breakfast</a></li>
                         <li><a href="#" onclick="showCategory('vegetarian')">Vegetarian Recipe</a></li>
@@ -78,6 +78,11 @@
             recipes.forEach(recipe => {
                 recipe.style.display = (recipe.dataset.category === category || category === 'home') ? 'block' : 'none';
             });
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.querySelector('.dropdown');
+            dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
         }
 
         // Show all by default
