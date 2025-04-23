@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Families Kitchen</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff8f0;
+        }
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 10px 0;
+            cursor: pointer;
+        }
+        .dropdown {
+            margin-left: 10px;
+            display: none;
+        }
+        .show {
+            display: block;
+        }
+        .recipe {
+            margin-bottom: 40px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .recipe h2 {
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .recipe img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="title">Families Kitchen</div>
+        <p>Welcome to the Indian Recipe blog</p>
+        <nav>
+            <ul>
+                <li onclick="navigate('home')">Home</li>
+                <li onclick="toggleDropdown()">Recipes
+                    <ul class="dropdown" id="dropdown">
+                        <li onclick="navigate('breakfast')">Breakfast</li>
+                        <li onclick="navigate('vegetarian')">Vegetarian Recipe</li>
+                        <li onclick="navigate('nonveg')">Non Vegetarian Recipe</li>
+                        <li onclick="navigate('snacks')">Snacks</li>
+                        <li onclick="navigate('rice')">Rice</li>
+                        <li onclick="navigate('sweets')">Sweets</li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content" id="mainContent">
+        <div class="recipe">
+            <h2>Breakfast: Masala Dosa</h2>
+            <img src="https://via.placeholder.com/600x300.png?text=Masala+Dosa" alt="Masala Dosa">
+            <h3>Ingredients:</h3>
+            <ul>
+                <li>1 cup rice</li>
+                <li>1/2 cup urad dal</li>
+                <li>Salt</li>
+                <li>Oil</li>
+                <li>Potato filling</li>
+            </ul>
+            <h3>Steps:</h3>
+            <ol>
+                <li>Soak rice and dal, then grind to a batter.</li>
+                <li>Ferment overnight.</li>
+                <li>Spread on tawa, add filling, cook until golden.</li>
+            </ol>
+        </div>
+
+        <div class="recipe">
+            <h2>Vegetarian: Paneer Butter Masala</h2>
+            <img src="https://via.placeholder.com/600x300.png?text=Paneer+Butter+Masala" alt="Paneer Butter Masala">
+            <h3>Ingredients:</h3>
+            <ul>
+                <li>200g paneer</li>
+                <li>2 tomatoes</li>
+                <li>Butter</li>
+                <li>Cream</li>
+                <li>Spices</li>
+            </ul>
+            <h3>Steps:</h3>
+            <ol>
+                <li>Cook tomatoes with spices.</li>
+                <li>Blend and strain.</li>
+                <li>Add paneer and cream, simmer.</li>
+            </ol>
+        </div>
+
+        <!-- More recipe blocks can go here -->
+
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.classList.toggle('show');
+        }
+        function navigate(section) {
+            alert('Navigation clicked: ' + section); // Placeholder for functionality
+        }
+    </script>
+</body>
+</html>
