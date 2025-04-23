@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff8f0;
+}
+
+.topbar {
+    background-color: #000;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.navbar {
+    background-color: #ff5e62;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #ff9966;
+    border-radius: 5px;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: #ff5e62;
+    border-radius: 5px;
+    padding: 10px 0;
+    min-width: 180px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.dropdown li {
+    padding: 8px 20px;
+}
+
+.dropdown li a {
+    display: block;
+}
+
+.dropdown-toggle:hover .dropdown {
+    display: block;
+}
+
+.content {
+    padding: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.recipe {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.recipe h2 {
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.recipe img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
