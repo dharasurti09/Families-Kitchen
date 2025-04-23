@@ -1,9 +1,11 @@
+/* General body styles */
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #fff8f0;
 }
 
+/* Top bar styling */
 .topbar {
     background-color: #000;
     color: white;
@@ -11,6 +13,7 @@ body {
     text-align: center;
 }
 
+/* Navbar styling */
 .navbar {
     background: linear-gradient(to right, #ff9933, #ffffff, #138808); /* Saffron to white to green */
     padding: 10px 0;
@@ -48,8 +51,9 @@ body {
     border-bottom: 2px solid #e67e22;
 }
 
+/* Dropdown menu styling */
 .dropdown {
-    display: none;
+    display: none; /* Hide by default */
     position: absolute;
     top: 40px;
     left: 0;
@@ -78,10 +82,7 @@ body {
     border-radius: 4px;
 }
 
-.dropdown-toggle:hover .dropdown {
-    display: block;
-}
-
+/* Recipe section styling */
 .content {
     padding: 30px;
     max-width: 1000px;
@@ -112,6 +113,7 @@ body {
     margin: 15px 0;
 }
 
+/* Fade-in effect for recipes */
 @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity: 1;}
