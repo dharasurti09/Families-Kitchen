@@ -4,90 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Families Kitchen</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fff8f0;
-        }
-        .sidebar {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 200px;
-            height: 100vh;
-            background-color: black;
-            color: white;
-            padding: 20px;
-        }
-        .content {
-            margin-left: 220px;
-            padding: 20px;
-        }
-        .title {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            margin: 10px 0;
-            cursor: pointer;
-        }
-        .dropdown {
-            margin-left: 10px;
-            display: none;
-        }
-        .show {
-            display: block;
-        }
-        .recipe {
-            margin-bottom: 40px;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .recipe h2 {
-            background: linear-gradient(to right, #ff9966, #ff5e62);
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            animation: fadeIn 1s ease-in-out;
-        }
-        .recipe img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-        @keyframes fadeIn {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="sidebar">
-        <div class="title">Families Kitchen</div>
-        <p>Welcome to the Indian Recipe blog</p>
-        <nav>
+    <header>
+        <div class="topbar">
+            <h1>Families Kitchen</h1>
+            <p>Welcome to the Indian Recipe blog</p>
+        </div>
+        <nav class="navbar">
             <ul>
-                <li onclick="navigate('home')">Home</li>
-                <li onclick="toggleDropdown()">Recipes
-                    <ul class="dropdown" id="dropdown">
-                        <li onclick="navigate('breakfast')">Breakfast</li>
-                        <li onclick="navigate('vegetarian')">Vegetarian Recipe</li>
-                        <li onclick="navigate('nonveg')">Non Vegetarian Recipe</li>
-                        <li onclick="navigate('snacks')">Snacks</li>
-                        <li onclick="navigate('rice')">Rice</li>
-                        <li onclick="navigate('sweets')">Sweets</li>
+                <li><a href="#" onclick="showCategory('home')">Home</a></li>
+                <li class="dropdown-toggle">
+                    <a href="#">Recipes</a>
+                    <ul class="dropdown">
+                        <li><a href="#" onclick="showCategory('breakfast')">Breakfast</a></li>
+                        <li><a href="#" onclick="showCategory('vegetarian')">Vegetarian Recipe</a></li>
+                        <li><a href="#" onclick="showCategory('nonveg')">Non Vegetarian Recipe</a></li>
+                        <li><a href="#" onclick="showCategory('snacks')">Snacks</a></li>
+                        <li><a href="#" onclick="showCategory('rice')">Rice</a></li>
+                        <li><a href="#" onclick="showCategory('sweets')">Sweets</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
-    </div>
+    </header>
+
     <div class="content" id="mainContent">
-        <div class="recipe">
+        <div class="recipe" data-category="breakfast">
             <h2>Breakfast: Masala Dosa</h2>
             <img src="https://via.placeholder.com/600x300.png?text=Masala+Dosa" alt="Masala Dosa">
             <h3>Ingredients:</h3>
@@ -106,7 +50,7 @@
             </ol>
         </div>
 
-        <div class="recipe">
+        <div class="recipe" data-category="vegetarian">
             <h2>Vegetarian: Paneer Butter Masala</h2>
             <img src="https://via.placeholder.com/600x300.png?text=Paneer+Butter+Masala" alt="Paneer Butter Masala">
             <h3>Ingredients:</h3>
@@ -125,18 +69,19 @@
             </ol>
         </div>
 
-        <!-- More recipe blocks can go here -->
-
+        <!-- More recipe blocks with data-category can be added here -->
     </div>
 
     <script>
-        function toggleDropdown() {
-            const dropdown = document.getElementById('dropdown');
-            dropdown.classList.toggle('show');
+        function showCategory(category) {
+            const recipes = document.querySelectorAll('.recipe');
+            recipes.forEach(recipe => {
+                recipe.style.display = (recipe.dataset.category === category || category === 'home') ? 'block' : 'none';
+            });
         }
-        function navigate(section) {
-            alert('Navigation clicked: ' + section); // Placeholder for functionality
-        }
+
+        // Show all by default
+        showCategory('home');
     </script>
 </body>
 </html>
