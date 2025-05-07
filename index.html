@@ -1,80 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Families Kitchen</title>
-    <link rel="stylesheet" href="style.css">
-    <script>
-        function toggleDropdown() {
-            var dropdown = document.getElementById("recipeDropdown");
-            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-        }
-        
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn')) {
-                var dropdowns = document.getElementsByClassName("dropdown");
-                for (let i = 0; i < dropdowns.length; i++) {
-                    let openDropdown = dropdowns[i];
-                    if (openDropdown.style.display === "block") {
-                        openDropdown.style.display = "none";
-                    }
-                }
-            }
-        }
-        
-function toggleDropdown() {
-    var dropdown = document.getElementById("recipeDropdown");
-    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-}
-
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Families Kitchen</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="topbar">
-        <h1>Families Kitchen</h1>
-        <p>Welcome to the Indian Recipe blog</p>
-    </div>
+  <!-- Top Title Box -->
+  <div class="topbar">
+    <h1>Families Kitchen</h1>
+    <p>Welcome to the Indian Recipe blog.</p>
+  </div>
 
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li>
-                <li class="dropdown-container">
-    <button onclick="toggleDropdown()" class="dropbtn">Recipes</button>
-    <ul id="recipeDropdown" class="dropdown">
-        <li><a href="breakfast.html">Breakfast</a></li>
-        <li><a href="vegetarian.html">Vegetarian</a></li>
-        <li><a href="nonveg.html">Non-Veg</a></li>
-        <li><a href="snacks.html">Snacks</a></li>
-        <li><a href="rice.html">Rice</a></li>
-        <li><a href="sweets.html">Sweets</a></li>
-    </ul>
-</li>
-
-               
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown-container">
+        <button onclick="toggleDropdown()" class="dropbtn">Recipes</button>
+        <ul id="recipeDropdown" class="dropdown">
+          <li><a href="breakfast.html">Breakfast</a></li>
+          <li><a href="vegetarian.html">Vegetarian</a></li>
+          <li><a href="nonveg.html">Non-Veg</a></li>
+          <li><a href="snacks.html">Snacks</a></li>
+          <li><a href="rice.html">Rice</a></li>
+          <li><a href="sweets.html">Sweets</a></li>
         </ul>
-    </nav>
+      </li>
+    </ul>
+  </nav>
 
-    <div class="content">
-        <div class="recipe">
-            <h2>Featured Recipe: Chole Bhature</h2>
-            <img src="https://via.placeholder.com/600x300.png?text=Chole+Bhature" alt="Chole Bhature">
-            <h3>Ingredients:</h3>
-            <ul>
-                <li>Chickpeas</li>
-                <li>Flour</li>
-                <li>Spices</li>
-                <li>Oil</li>
-                <li>Onion and tomato gravy</li>
-            </ul>
-            <h3>Steps:</h3>
-            <ol>
-                <li>Soak and boil chickpeas.</li>
-                <li>Prepare spicy onion-tomato gravy.</li>
-                <li>Mix and fry the bhature.</li>
-                <li>Serve hot with chole.</li>
-            </ol>
-        </div>
+  <!-- Main Content -->
+  <div class="content">
+    <div class="recipe">
+      <h2>Masala Dosa</h2>
+      <img src="images/masala-dosa.jpg" alt="Masala Dosa">
+      <h3>Ingredients:</h3>
+      <ul>
+        <li>2 cups rice</li>
+        <li>1/2 cup urad dal</li>
+        <li>1/2 tsp fenugreek seeds</li>
+        <li>Salt to taste</li>
+        <li>Oil or ghee for cooking</li>
+      </ul>
+      <h3>Steps:</h3>
+      <ol>
+        <li>Soak rice, dal, and fenugreek seeds for 6 hours.</li>
+        <li>Grind into a smooth batter and ferment overnight.</li>
+        <li>Make potato masala separately.</li>
+        <li>Spread batter on hot tawa, drizzle oil, and stuff with masala.</li>
+        <li>Serve hot with chutney and sambar.</li>
+      </ol>
     </div>
+  </div>
+
+  <!-- JavaScript for Dropdown -->
+  <script>
+    function toggleDropdown() {
+      var dropdown = document.getElementById("recipeDropdown");
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+
+    // Optional: Close dropdown if clicked outside
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.style.display === "block") {
+            openDropdown.style.display = "none";
+          }
+        }
+      }
+    }
+  </script>
 </body>
 </html>
