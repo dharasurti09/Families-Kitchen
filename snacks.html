@@ -11,21 +11,21 @@
         <p>Welcome to the Indian Recipe blog</p>
     </div>
     <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li class="dropdown-container">
-                <button onclick="toggleDropdown()" class="dropbtn">Recipes</button>
-                <ul id="recipeDropdown" class="dropdown">
-                    <li><a href="breakfast.html">Breakfast</a></li>
-                    <li><a href="vegetarian.html">Vegetarian</a></li>
-                    <li><a href="nonveg.html">Non-Veg</a></li>
-                    <li><a href="snacks.html">Snacks</a></li>
-                    <li><a href="rice.html">Rice</a></li>
-                    <li><a href="sweets.html">Sweets</a></li>
-                </ul>
-            </li>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown-container">
+        <button onclick="toggleDropdown()" class="dropbtn">Recipes</button>
+        <ul id="recipeDropdown" class="dropdown">
+          <li><a href="breakfast.html">Breakfast</a></li>
+          <li><a href="vegetarian.html">Vegetarian</a></li>
+          <li><a href="nonveg.html">Non-Veg</a></li>
+          <li><a href="snacks.html">Snacks</a></li>
+          <li><a href="rice.html">Rice</a></li>
+          <li><a href="sweets.html">Sweets</a></li>
         </ul>
-    </nav>
+      </li>
+    </ul>
+  </nav>
 
     <div class="content">
         <div class="recipe">
@@ -48,10 +48,23 @@
         </div>
     </div>
     <script>
-        function toggleDropdown() {
-            var dropdown = document.getElementById("recipeDropdown");
-            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        <script>
+    function toggleDropdown() {
+      var dropdown = document.getElementById("recipeDropdown");
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.style.display === "block") {
+            openDropdown.style.display = "none";
+          }
         }
-    </script>
+      }
+    }
+  </script>
 </body>
 </html>
