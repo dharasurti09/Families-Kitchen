@@ -1,56 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Breakfast Recipes</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Breakfast Recipes | Families Kitchen</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="topbar">
-        <h1>Families Kitchen</h1>
-        <p>Welcome to the Indian Recipe blog</p>
-    </div>
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li class="dropdown-container">
-                <button onclick="toggleDropdown()" class="dropbtn">Recipes</button>
-                <ul id="recipeDropdown" class="dropdown">
-                    <li><a href="breakfast.html">Breakfast</a></li>
-                    <li><a href="vegetarian.html">Vegetarian</a></li>
-                    <li><a href="nonveg.html">Non-Veg</a></li>
-                    <li><a href="snacks.html">Snacks</a></li>
-                    <li><a href="rice.html">Rice</a></li>
-                    <li><a href="sweets.html">Sweets</a></li>
-                </ul>
-            </li>
+  <!-- Top Title Box -->
+  <div class="topbar">
+    <h1>Families Kitchen</h1>
+    <p>Delicious Indian Breakfast Recipes</p>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown-container">
+        <button onclick="toggleDropdown()" class="dropbtn">Recipes</button>
+        <ul id="recipeDropdown" class="dropdown">
+          <li><a href="breakfast.html">Breakfast</a></li>
+          <li><a href="vegetarian.html">Vegetarian</a></li>
+          <li><a href="nonveg.html">Non-Veg</a></li>
+          <li><a href="snacks.html">Snacks</a></li>
+          <li><a href="rice.html">Rice</a></li>
+          <li><a href="sweets.html">Sweets</a></li>
         </ul>
-    </nav>
-    <div class="content">
-        <div class="recipe">
-            <h2>Masala Dosa</h2>
-            <img src="https://via.placeholder.com/600x300.png?text=Masala+Dosa" alt="Masala Dosa">
-            <h3>Ingredients:</h3>
-            <ul>
-                <li>1 cup rice</li>
-                <li>1/2 cup urad dal</li>
-                <li>Salt</li>
-                <li>Oil</li>
-                <li>Potato filling</li>
-            </ul>
-            <h3>Steps:</h3>
-            <ol>
-                <li>Soak rice and dal, then grind to a batter.</li>
-                <li>Ferment overnight.</li>
-                <li>Spread on tawa, add filling, cook until golden.</li>
-            </ol>
-        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="content">
+    <!-- Recipe 1 -->
+    <div class="recipe">
+      <h2>Idli</h2>
+      <img src="images/idli.jpg" alt="Idli">
+      <h3>Ingredients:</h3>
+      <ul>
+        <li>2 cups rice</li>
+        <li>1 cup urad dal</li>
+        <li>Salt to taste</li>
+      </ul>
+      <h3>Steps:</h3>
+      <ol>
+        <li>Soak rice and dal separately for 6 hours.</li>
+        <li>Grind to a smooth batter and ferment overnight.</li>
+        <li>Pour into idli molds and steam for 10–12 minutes.</li>
+      </ol>
     </div>
-    <script>
-        function toggleDropdown() {
-            var dropdown = document.getElementById("recipeDropdown");
-            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+
+    <!-- Recipe 2 -->
+    <div class="recipe">
+      <h2>Aloo Paratha</h2>
+      <img src="images/aloo-paratha.jpg" alt="Aloo Paratha">
+      <h3>Ingredients:</h3>
+      <ul>
+        <li>2 cups wheat flour</li>
+        <li>2 boiled potatoes</li>
+        <li>Green chili, coriander, spices</li>
+      </ul>
+      <h3>Steps:</h3>
+      <ol>
+        <li>Prepare dough and potato filling.</li>
+        <li>Stuff the dough balls and roll them flat.</li>
+        <li>Cook on tawa with ghee until golden brown.</li>
+      </ol>
+    </div>
+
+    <!-- Recipe 3 -->
+    <div class="recipe">
+      <h2>Poha</h2>
+      <img src="images/poha.jpg" alt="Poha">
+      <h3>Ingredients:</h3>
+      <ul>
+        <li>2 cups flattened rice (poha)</li>
+        <li>1 chopped onion</li>
+        <li>Mustard seeds, curry leaves</li>
+      </ul>
+      <h3>Steps:</h3>
+      <ol>
+        <li>Wash and drain poha.</li>
+        <li>Tempering with mustard, onion, and spices.</li>
+        <li>Mix poha and cook for 5 minutes.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- JavaScript for Dropdown -->
+  <script>
+    function toggleDropdown() {
+      var dropdown = document.getElementById("recipeDropdown");
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.style.display === "block") {
+            openDropdown.style.display = "none";
+          }
         }
-    </script>
+      }
+    }
+  </script>
 </body>
 </html>
